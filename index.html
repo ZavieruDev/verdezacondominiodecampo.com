@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Verdeza Condominio de Campo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <div class="navbar-logo">Verdeza</div>
+      <div class="navbar-enlaces">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#amenidades">Amenidades</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="carrusel">
+        <img src="imagenes/hero1.png" class="slide activo">
+        <img src="imagenes/hero10.jpeg" class="slide">
+        <img src="imagenes/hero3.png" class="slide">
+        <img src="imagenes/hero4.png" class="slide">
+        <img src="imagenes/hero5.png" class="slide">
+        <img src="imagenes/hero6.png" class="slide">
+        <img src="imagenes/hero7.png" class="slide">
+        <img src="imagenes/hero8.jpeg" class="slide">
+        <img src="imagenes/hero9.jpeg" class="slide">
+        <img src="imagenes/hero10.jpeg" class="slide">
+      </div>
+      <div class="hero-contenido">
+        <img src="imagenes/logo.png" alt="logo verdeza" class="hero-logo">
+        <h1>Vive rodeado de naturaleza</h1>
+        <p>Lotes campestres en Turbaco, Bolívar</p>
+        <button>MAS INFORMACIÒN</button>
+      </div>
+      
+    </div>
+
+    <!-- SOBRE NOSOTROS -->
+    <div class="seccion" id="nosotros">
+      <h2>¿Quiénes somos?</h2>
+      <div class="nosotros-contenido">
+      
+        <div class="nosotros-texto">
+         <p>Verdeza es un proyecto inmobiliario campestre que nace de la necesidad de volver a lo esencial: la naturaleza, la tranquilidad y el valor de la vida en familia. Es un espacio creado para quienes desean vivir lejos del ruido, rodeados de zonas verdes, aire puro y paisajes que transmiten calma.</p>
+         <p>En Verdeza, cada detalle está pensado para brindar bienestar, seguridad y calidad de vida, promoviendo un estilo de vida más consciente, en armonía con el entorno y con el tiempo que realmente importa. Aquí, lo campestre se convierte en hogar, y la naturaleza en parte de tu día a día.</p>
+        </div>
+
+        <div class="nosotros-datos">
+            <div class="dato">
+                <span class="dato-numero">20</span>
+                <span class="dato-label">Hectareas</span>
+            </div>
+            <div class="dato">
+                <span class="dato-numero">290</span>
+                <span class="dato-label">Lotes disponibles</span>
+            </div>
+            <div class="dato">
+                <span class="dato-numero">300m2</span>
+                <span class="dato-label">Desde</span>
+            </div>
+            <div class="dato">
+                <span class="dato-numero">600m2</span>
+                <span class="dato-label">Hasta</span>
+            </div>
+        </div>
+
+        <div class="nosotros-video">
+          <iframe src="https://www.youtube.com/embed/KV2P_5Gr_Hs"
+          title="Video Verdeza"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+           allowfullscreen>
+          </iframe>
+        </div>
+
+     
+      </div>
+    
+    </div>
+
+
+
+    <!-- Amenidades -->
+    <div class="seccion fondo-claro" id="amenidades">
+      <h2 class="titulo-centrado">Amenidades</h2>
+      <p  class="titulo-centrado">Todo lo que necesitas para vivir bien</p>
+
+      <div class="amenidades-contenedor">
+        <div class="amenidades-item" onclick="abrirLightbox('imagenes/amenidades1.jpg')">
+            <img src="imagenes/amenidades1.jpg" alt="Ecocamp">
+          <div class="amenidades-nombre">Ecocamp</div>
+        </div>
+        <div class="amenidades-item" onclick="abrirLightbox('imagenes/amenidades2.jpg')">
+            <img src="imagenes/amenidades2.jpg" alt="Piscinas">
+            <div class="amenidades-nombre">Piscinas</div>
+        </div>
+        <div class="amenidades-item" onclick="abrirLightbox('imagenes/amenidades3.jpg')">
+            <img src="imagenes/amenidades3.jpg" alt="Porteria">
+            <div class="amenidades-nombre">Porteria</div>
+        </div>
+        <div class="amenidades-item" onclick="abrirLightbox('imagenes/amenidades4.jpg')">
+           <img src="imagenes/amenidades4.jpg" alt="Mallas Catamaràn">
+           <div class="amenidades-nombre">Mallas Catamaràn</div>
+        </div>
+        <div class="amenidades-item" onclick="abrirLightbox('imagenes/amenidades5.jpg')">
+          <img src="imagenes/amenidades5.jpg" alt="zona deportiva">
+          <div class="amenidades-nombre">Zona deportiva</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!--lightbox amenidades-->
+    <div class="lightbox" id="LightboxAmenidad">
+      <img src="" alt="Amenidad ampliada" id="LightboxAmenidadImg">
+    </div>
+
+
+    <!--plano de loteo-->
+
+    <div class="seccion" id="plano">
+      <h2>Plano de loteo</h2>
+      <p class="seccion-subtitulo">conoce la distribucion del proyecto</p>
+      <div class="plano-contenedor">
+        <img src="imagenes/plano.jpeg" alt="Plano de loteo Verdeza" class="plano-imagen" id="planoImg">
+        <p class="plano-hint">🔍 Haz clic para ampliar</p>
+      </div>
+    </div>
+
+
+    <!-- LIGHTBOX DEL PLANO -->
+
+    <div class="lightbox" id="lightbox">
+     <img src="imagenes/plano.jpeg" alt="Plano ampliado">
+    </div>
+
+    
+
+    <!-- UBICACIÓN -->
+    <div class="seccion fondo-claro" id="ubicacion">
+      <h2>Nuestra ubicación</h2>
+
+      <div class="ubicacion-contenedor">
+
+        <div class="ubicacion-mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54676.82032284282!2d-75.45519681792426!3d10.305960422183814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef6210045aa82c5%3A0xb5d670838952405c!2sVERDEZA%20CONDOMINIO%20DE%20CAMPO!5e0!3m2!1ses-419!2sco!4v1773683430799!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="ubicacion-texto">
+          <h3>La mejor ubicacion para tu hogar soñado</h3>
+          <p>Estamos ubicados en Turbaco, Bolívar, una zona tranquila rodeada de montañas y naturaleza.</p>
+
+          <div class="ubicacion-item">
+            <span class="ubicacion-icono">📍</span>
+            <span>Detrás de Bonanza, Turbaco, Bolívar</span>
+          </div>
+
+          <div class="ubicacion-item">
+            <span class="ubicacion-icono">🚗</span>
+            <span>A solo 20 minutos de Cartagena</span>
+          </div>
+
+          <div class="ubicacion-item">
+            <span class="ubicacion-icono">🌿</span>
+            <span>Zona de gran valorización y desarrollo</span>
+          </div>
+
+          <div class="ubicacion-item">
+            <span class="ubicacion-icono">🏞️</span>
+            <span>Rodeado de montañas y zonas verdes</span>
+          </div>
+
+          <button class="ubicacion-boton">Quiero mas informacion</button>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- CONTACTO -->
+<div class="seccion" id="contacto">
+  <h2>Contáctanos</h2>
+  <p class="seccion-subtitulo">Estamos listos para atenderte</p>
+
+  <div class="contacto-contenedor">
+
+    <div class="contacto-info">
+      <h3>Información de contacto</h3>
+      <div class="contacto-item">
+        <span class="contacto-icono">📱</span>
+        <span>300 627 5231 - 3218665485</span>
+      </div>
+      <div class="contacto-item">
+        <span class="contacto-icono">☎️</span>
+        <span>605 641 6278</span>
+      </div>
+      <div class="contacto-item">
+        <span class="contacto-icono">✉️</span>
+        <span>gerenciaventaspromotoraverdeza@gmail.com</span>
+      </div>
+      <div class="contacto-item">
+        <span class="contacto-icono">📍</span>
+        <span>Turbaco, Bolívar, Colombia</span>
+      </div>
+      <div class="contacto-item">
+        <span class="contacto-icono">🕐</span>
+        <span>Lunes a Sábado — 8am a 6pm</span>
+      </div>
+      <div class="contacto-redes">
+       <a href="https://www.youtube.com/@promotoraverdeza" target="_blank">
+       <i class="fa-brands fa-youtube"></i>
+       </a>
+       <a href="https://www.tiktok.com/@promotora.verdeza?_r=1&_t=ZS-94nPHAQobC8" target="_blank">
+       <i class="fa-brands fa-tiktok"></i>
+       </a>
+       <a href="https://www.facebook.com/share/18cGsC66NM/" target="_blank">
+       <i class="fa-brands fa-facebook"></i>
+       </a>
+      </div>
+    </div>
+
+    <div class="contacto-formularizo">
+      <form class="formulario" action="https://formspree.io/f/xreyolnb" method="POST">
+        <input type="hidden" name="_next" value="https://verdezacondominiodecampo.com">
+        <div class="campo">
+          <label>Nombre completo</label>
+          <input type="text" name="nombre" placeholder="Tu nombre">
+        </div>
+        <div class="campo">
+          <label>Teléfono</label>
+          <input type="tel" name="telefono" placeholder="Tu número de teléfono">
+        </div>
+        <div class="campo">
+          <label>Correo electrónico</label>
+          <input type="email" name="email" placeholder="Tu correo">
+        </div>
+        <div class="campo">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="4"></textarea>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+    
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>© 2026 Verdeza Condominio de Campo — Turbaco, Bolívar</p>
+      <p class="footer-dev">Diseñado y Desarrollado por <span>ZavieruDev</span></p>
+      <a href="https://www.instagram.com/zavierudev" target="_blank" class="footer-insta">
+      <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+
+    <!--modal de contacto-->
+    <div class="modal-fondo" id="modal">
+      <div class="modal-caja">
+
+        <button class="modal-cerrar" id="cerrarModal">X</button>
+        <h2>Contactanos</h2>
+        <p class="seccion-subtitutulo">Dejanos tus datos y te contactaremos pronto</p>
+
+        <form class="formulario" action="https://formspree.io/f/xreyolnb" method="POST">
+          <input type="hidden" name="_next" value="https://verdezacondominiodecampo.com">
+          <div class="campo">
+            <label>Nombre completo</label>
+            <input type="text" name="nombre" placeholder="Tu nombre">
+          </div>
+
+          <div class="campo">
+            <label>Telefono</label>
+            <input type="tel" name="telefono" placeholder="Tu numero de telefono">
+          </div>
+
+          <div class="campo">
+            <label>Correo electronico</label>
+            <input type="email" name="email" placeholder="Tu correo">
+          </div>
+
+          <div class="campo">
+            <label>Mensaje</label>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje aqui..." rows="4"></textarea>
+          </div>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+       const slides = document.querySelectorAll('.slide');
+
+       let actual = 0;
+
+       function cambiarSlide() {
+        slides[actual].classList.remove('activo');
+        actual = (actual + 1) % slides.length;
+        slides[actual].classList.add('activo');
+        }
+        setInterval(cambiarSlide, 4000);
+
+        const modal = document.getElementById('modal');
+        const cerrarModal = document.getElementById('cerrarModal');
+        const botones = document.querySelectorAll('button:not(.modal-cerrar):not([type="submit"])');
+
+        botones.forEach(function(boton) {
+          boton.addEventListener('click', function() {
+            modal.classList.add('visible');
+            });
+            });
+
+            cerrarModal.addEventListener('click', function() {
+              modal.classList.remove('visible');
+              });
+              modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                  modal.classList.remove('visible');
+                  }
+                  });
+
+                  // LIGHTBOX
+                  const planoImg = document.getElementById('planoImg');
+                  const lightbox = document.getElementById('lightbox');
+                  planoImg.addEventListener('click', function() {
+                    lightbox.classList.add('visible');
+                    });
+                    lightbox.addEventListener('click', function() {
+                      lightbox.classList.remove('visible');
+                      });
+
+                      // LIGHTBOX AMENIDADES
+                  const LightboxAmenidad = document.getElementById('LightboxAmenidad');
+                  const LightboxImg = document.getElementById('LightboxAmenidadImg');
+
+                  function abrirLightbox(src) {
+                   LightboxImg.src = src;
+                   LightboxAmenidad.classList.add('visible');
+                  }
+
+                  LightboxAmenidad.addEventListener('click', function() {
+                   LightboxAmenidad.classList.remove('visible');
+                  });
+                  // FORMULARIO ENVIADO
+                  function formularioEnviado(e) {
+                  e.preventDefault();
+                  fetch('https://formspree.io/f/xreyolnb', {
+                   method: 'POST',
+                   body: new FormData(e.target),
+                  }).then(function() {
+                    modal.classList.remove('visible');
+                    alert('¡Mensaje enviado! Te contactaremos pronto.');
+                    e.target.reset();
+                    });
+                  }
+    </script>
+
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/573218665485?text=Hola,%20quiero%20mas%20informacion%20sobre%20los%20lotes." target="_blank" class="whatsapp-boton">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    
+
+  </body>
+
+</html>
