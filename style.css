@@ -24,6 +24,7 @@ body {
   padding: 16px 40px;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .navbar-logo {
@@ -42,6 +43,15 @@ body {
 
 .navbar-enlaces a:hover {
   color: var(--verde-claro);
+}
+
+.navbar-hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--blanco);
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* HERO */
@@ -622,15 +632,36 @@ body {
 
   /* NAVBAR */
   .navbar {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 16px 20px;
-    text-align: center;
+    text-align: left;
+    position: relative;
+  }
+
+  .navbar-hamburguesa {
+    display: block;
+  }
+
+  .navbar-enlaces {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--verde-oscuro);
+    padding: 16px 0;
+  }
+
+  .navbar-enlaces.activo {
+    display: flex;
   }
 
   .navbar-enlaces a {
-    margin-left: 10px;
-    font-size: 13px;
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 15px;
   }
 
   /* HERO */

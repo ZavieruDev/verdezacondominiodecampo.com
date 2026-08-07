@@ -3,6 +3,7 @@
 
   <head>
     <title>Verdeza Condominio de Campo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -15,14 +16,17 @@
 
     <!-- NAVBAR -->
     <div class="navbar">
-      <div class="navbar-logo">Verdeza</div>
-      <div class="navbar-enlaces">
-        <a href="#nosotros">Nosotros</a>
-        <a href="#amenidades">Amenidades</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#ubicacion">Ubicación</a>
-      </div>
-    </div>
+  <div class="navbar-logo">Verdeza</div>
+  <div class="navbar-enlaces" id="navbarEnlaces">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#amenidades">Amenidades</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#ubicacion">Ubicación</a>
+  </div>
+  <button class="navbar-hamburguesa" id="navbarHamburguesa">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+</div>
 
     <!-- HERO -->
     <div class="hero">
@@ -316,7 +320,7 @@
 
         const modal = document.getElementById('modal');
         const cerrarModal = document.getElementById('cerrarModal');
-        const botones = document.querySelectorAll('button:not(.modal-cerrar):not([type="submit"])');
+        const botones = document.querySelectorAll('button:not(.modal-cerrar):not([type="submit"]):not(#navbarHamburguesa)');
 
         botones.forEach(function(boton) {
           boton.addEventListener('click', function() {
@@ -367,6 +371,21 @@
                     e.target.reset();
                     });
                   }
+
+
+                  // MENÚ HAMBURGUESA
+const navbarHamburguesa = document.getElementById('navbarHamburguesa');
+const navbarEnlaces = document.getElementById('navbarEnlaces');
+
+navbarHamburguesa.addEventListener('click', function() {
+  navbarEnlaces.classList.toggle('activo');
+});
+
+document.querySelectorAll('.navbar-enlaces a').forEach(function(enlace) {
+  enlace.addEventListener('click', function() {
+    navbarEnlaces.classList.remove('activo');
+  });
+});
     </script>
 
 
