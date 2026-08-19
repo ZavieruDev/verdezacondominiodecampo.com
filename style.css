@@ -11,7 +11,7 @@
 /* BASE */
 body {
   margin: 0;
-  font-family: 'Raleway', Arial;
+  font-family: "Raleway", Arial;
   color: var(--texto);
 }
 
@@ -186,7 +186,6 @@ body {
   font-size: 13px;
   margin-top: 6px;
 }
-
 
 /* LOTES */
 .seccion-subtitulo {
@@ -411,7 +410,6 @@ body {
   color: var(--verde-oscuro);
 }
 
-
 /* UBICACIÓN */
 .ubicacion-contenedor {
   display: flex;
@@ -613,7 +611,7 @@ body {
 .footer-dev {
   margin-top: 8px;
   font-size: 13px;
-  color:#666666
+  color: #666666;
 }
 
 .footer-dev {
@@ -629,7 +627,6 @@ body {
    RESPONSIVE - CELULAR
    ================================ */
 @media (max-width: 768px) {
-
   /* NAVBAR */
   .navbar {
     flex-direction: row;
@@ -699,8 +696,6 @@ body {
     height: 300px;
   }
 
-  
-
   /* PLANO */
   .plano-imagen {
     width: 100%;
@@ -734,9 +729,7 @@ body {
     max-width: 50%;
     margin: 0 auto;
   }
-
 }
-
 
 /* REDES SOCIALES CONTACTO */
 .contacto-redes {
