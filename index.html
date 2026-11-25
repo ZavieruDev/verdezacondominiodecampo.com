@@ -16,13 +16,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/inicio.css">
   </head>
 
   <body>
     <!-- NAVBAR -->
     <div class="navbar">
-      <div class="navbar-logo">Verdeza</div>
+      <div class="navbar-logo">
+  <a href="index.html" aria-label="Ir al inicio de Verdeza">
+    <img
+      src="imagenes/logo.png"
+      alt="Verdeza Condominio de Campo"
+      class="navbar-logo-imagen"
+    />
+  </a>
+</div>
       <div class="navbar-enlaces" id="navbarEnlaces">
         <a href="#nosotros">Nosotros</a>
         <a href="#amenidades">Amenidades</a>
@@ -50,7 +59,6 @@
         <img src="imagenes/hero10.jpeg" class="slide" />
       </div>
       <div class="hero-contenido">
-        <img src="imagenes/logo.png" alt="logo verdeza" class="hero-logo" />
         <h1>Vive rodeado de naturaleza</h1>
         <p>Lotes campestres en Turbaco, Bolívar</p>
         <button>MAS INFORMACIÒN</button>
@@ -85,35 +93,19 @@
           </div>
           <div class="dato">
             <span class="dato-numero">290</span>
-            <span class="dato-label">Lotes disponibles</span>
+            <span class="dato-label">Lotes del proyecto</span>
           </div>
           <div class="dato">
-            <span class="dato-numero">300m2</span>
+            <span class="dato-numero">300 m²</span>
             <span class="dato-label">Desde</span>
           </div>
           <div class="dato">
-            <span class="dato-numero">600m2</span>
+            <span class="dato-numero">600 m²</span>
             <span class="dato-label">Hasta</span>
           </div>
         </div>
 
-        <div class="nosotros-video">
-          <iframe
-            src="https://www.youtube.com/embed/hsJk5dIqbXg"
-            title="Video Verdeza"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-          >
-          </iframe>
-        </div>
+      
       </div>
     </div>
 
@@ -166,21 +158,42 @@
       <img src="" alt="Amenidad ampliada" id="LightboxAmenidadImg" />
     </div>
 
-    <!--plano de loteo-->
+   <!-- =====================================
+     EXPLORA NUESTROS LOTES
+     ===================================== -->
 
-    <div class="seccion" id="plano">
-      <h2>Plano de loteo</h2>
-      <p class="seccion-subtitulo">conoce la distribucion del proyecto</p>
-      <div class="plano-contenedor">
-        <img
-          src="imagenes/plano.jpeg"
-          alt="Plano de loteo Verdeza"
-          class="plano-imagen"
-          id="planoImg"
-        />
-        <p class="plano-hint">🔍 Haz clic para ampliar</p>
-      </div>
-    </div>
+<section class="explora-lotes" id="explora-lotes">
+
+  <div class="explora-lotes-contenido">
+
+    <span class="explora-lotes-etiqueta">
+      ENCUENTRA TU ESPACIO
+    </span>
+
+    <h2>Un lugar para construir tu futuro.</h2>
+
+    <p>
+      Descubre los lotes de Verdeza, explora su ubicación
+      dentro del proyecto y consulta su disponibilidad
+      en nuestro plano interactivo.
+    </p>
+
+    <a href="lotes.html" class="explora-lotes-boton">
+      EXPLORAR LOTES
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+
+  </div>
+
+  <div class="explora-lotes-imagen">
+    <img
+      src="imagenes/hero1.png"
+      alt="Paisaje natural del proyecto Verdeza"
+      loading="lazy"
+    />
+  </div>
+
+</section>
 
     <!-- LIGHTBOX DEL PLANO -->
 
@@ -236,6 +249,73 @@
         </div>
       </div>
     </div>
+    <!-- =====================================
+     EXPERIENCIA VERDEZA — VIDEOS
+     ===================================== -->
+
+<section class="experiencia-verdeza" id="experiencia">
+
+  <div class="experiencia-encabezado">
+    <span class="experiencia-etiqueta">
+      DESCUBRE VERDEZA
+    </span>
+
+    <h2>Vive la experiencia Verdeza</h2>
+
+    <p>
+      Descubre la naturaleza, los paisajes y la tranquilidad
+      que hacen de Verdeza un lugar especial.
+    </p>
+  </div>
+
+  <div class="experiencia-videos">
+
+    <article class="experiencia-video">
+      <div class="experiencia-video-marco">
+  <iframe
+  src="https://www.youtube.com/embed/hsJk5dIqbXg?si=X1LxKoZuyJw5-Q7i"
+  title="Conoce Verdeza"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+</div>
+      
+      <h3>Conoce Verdeza</h3>
+    </article>
+
+    <article class="experiencia-video">
+      <div class="experiencia-video-marco">
+  <iframe
+    src="https://www.youtube.com/embed/Uzd4e21xtZo"
+    title="Ubicacion"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+      <h3>Ubicación</h3>
+    </article>
+
+    <article class="experiencia-video">
+      <div class="experiencia-video-marco">
+  <iframe
+    src="https://www.youtube.com/embed/KV2P_5Gr_Hs"
+    title="Vive la experiencia Verdeza"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+      <h3>Imagina tu futuro aquí</h3>
+    </article>
+
+  </div>
+
+</section>
 
     <!-- CONTACTO -->
     <div class="seccion" id="contacto">
@@ -325,20 +405,117 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>© 2026 Verdeza Condominio de Campo — Turbaco, Bolívar</p>
-      <p class="footer-dev">
-        Diseñado y Desarrollado por <span>ZavieruDev</span>
+   <!-- =====================================
+     FOOTER — VERDEZA MODERN PREMIUM
+     ===================================== -->
+
+<footer class="footer">
+
+  <div class="footer-contenido">
+
+    <!-- Identidad -->
+    <div class="footer-columna footer-identidad">
+      <img
+        src="imagenes/logo.png"
+        alt="Verdeza Condominio de Campo"
+        class="footer-logo"
+      />
+
+      <p>
+        Un lugar donde la naturaleza, la tranquilidad
+        y tus sueños encuentran su espacio.
       </p>
+
+      <span class="footer-ubicacion">
+        Turbaco, Bolívar, Colombia
+      </span>
+    </div>
+
+    <!-- Navegación -->
+    <div class="footer-columna">
+      <h3>Explora Verdeza</h3>
+
+      <nav class="footer-enlaces" aria-label="Navegación del pie de página">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#amenidades">Amenidades</a>
+        <a href="lotes.html">Explorar lotes</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <!-- Contacto -->
+    <div class="footer-columna">
+      <h3>Hablemos</h3>
+
+      <div class="footer-contacto">
+        <a href="tel:+573006275231">300 627 5231</a>
+        <a href="tel:+573218665485">321 866 5485</a>
+
+        <a href="mailto:gerenciaventaspromotoraverdeza@gmail.com">
+          gerenciaventaspromotoraverdeza@gmail.com
+        </a>
+      </div>
+
+      <div class="footer-redes">
+        <a
+          href="https://www.youtube.com/@promotoraverdeza"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube de Verdeza"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/18cGsC66NM/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook de Verdeza"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@promotora.verdeza"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok de Verdeza"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Franja inferior -->
+  <div class="footer-inferior">
+
+    <p>
+      © 2026 Verdeza Condominio de Campo —
+      Turbaco, Bolívar
+    </p>
+
+    <div class="footer-desarrollador">
+      <p class="footer-dev">
+        Diseñado y desarrollado por <span>ZavieruDev</span>
+      </p>
+
       <a
         href="https://www.instagram.com/zavierudev"
         target="_blank"
+        rel="noopener noreferrer"
         class="footer-insta"
+        aria-label="Instagram de ZavieruDev"
       >
         <i class="fa-brands fa-instagram"></i>
       </a>
     </div>
+
+  </div>
+
+</footer>
 
     <!--modal de contacto-->
     <div class="modal-fondo" id="modal">
@@ -423,17 +600,19 @@
           modal.classList.remove("visible");
         }
       });
+// LIGHTBOX
+const planoImg = document.getElementById("planoImg");
+const lightbox = document.getElementById("lightbox");
 
-      // LIGHTBOX
-      const planoImg = document.getElementById("planoImg");
-      const lightbox = document.getElementById("lightbox");
-      planoImg.addEventListener("click", function () {
-        lightbox.classList.add("visible");
-      });
-      lightbox.addEventListener("click", function () {
-        lightbox.classList.remove("visible");
-      });
+if (planoImg && lightbox) {
+  planoImg.addEventListener("click", function () {
+    lightbox.classList.add("visible");
+  });
 
+  lightbox.addEventListener("click", function () {
+    lightbox.classList.remove("visible");
+  });
+}
       // LIGHTBOX AMENIDADES
       const LightboxAmenidad = document.getElementById("LightboxAmenidad");
       const LightboxImg = document.getElementById("LightboxAmenidadImg");
@@ -472,6 +651,28 @@
           navbarEnlaces.classList.remove("activo");
         });
       });
+      /* ========================================
+   NAVBAR — EFECTO AL DESPLAZARSE
+   ======================================== */
+
+const navbarPrincipal = document.querySelector(".navbar");
+
+function actualizarNavbarAlDesplazarse() {
+  if (!navbarPrincipal) return;
+
+  navbarPrincipal.classList.toggle(
+    "navbar-scroll",
+    window.scrollY > 80
+  );
+}
+
+window.addEventListener(
+  "scroll",
+  actualizarNavbarAlDesplazarse,
+  { passive: true }
+);
+
+actualizarNavbarAlDesplazarse();
     </script>
 
     <!-- BOTÓN WHATSAPP -->

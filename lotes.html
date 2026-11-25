@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
+    
     <style>
       /* Estilos propios de la página de lotes (usan los colores de style.css) */
       .navbar-logo a { color: inherit; text-decoration: none; }
@@ -71,12 +72,24 @@
         #plano { height: 60vh; }
       }
     </style>
+      
+
+  <link rel="stylesheet" href="css/lotes.css" />
+
   </head>
 
   <body>
     <!-- NAVBAR -->
     <div class="navbar">
-      <div class="navbar-logo"><a href="index.html">Verdeza</a></div>
+      <div class="navbar-logo">
+  <a href="index.html" aria-label="Volver al inicio de Verdeza">
+    <img
+      src="imagenes/logo.png"
+      alt="Verdeza Condominio de Campo"
+      class="navbar-logo-imagen"
+    />
+  </a>
+</div>
       <div class="navbar-enlaces" id="navbarEnlaces">
         <a href="index.html#nosotros">Nosotros</a>
         <a href="index.html#amenidades">Amenidades</a>
@@ -91,9 +104,42 @@
 
     <!-- LOTES -->
     <main class="seccion fondo-claro lotes-pagina">
-      <h2>Plano interactivo de lotes</h2>
-      <p class="sub">Acerca con la rueda del mouse o los botones +/−, arrastra para moverte y toca un lote para ver su información.</p>
-      <div id="barraEdit" class="barra-edit" hidden></div>
+
+  <div class="lotes-encabezado">
+
+    <span class="lotes-etiqueta">
+      DESCUBRE TU PRÓXIMO HOGAR
+    </span>
+
+    <h1>
+      Encuentra el espacio ideal
+      <em>para tu futuro.</em>
+    </h1>
+
+    <p class="lotes-descripcion">
+      Explora nuestro condominio de campo, conoce la ubicación
+      de cada terreno y consulta sus características,
+      precios y disponibilidad actualizada.
+    </p>
+
+    <div class="lotes-instrucciones">
+      <i class="fa-solid fa-hand-pointer"></i>
+      <span>
+        Selecciona un lote en el plano para conocer sus detalles.
+        Puedes acercar, alejar y arrastrar el mapa.
+      </span>
+    </div>
+
+  </div>
+      
+
+<div id="estadoConexion" role="status" aria-live="polite"
+     style="margin-bottom:14px;padding:12px 16px;
+            background:#e8f3e9;color:#286548;
+            border-radius:10px;font-size:14px;">
+  ⏳ Consultando precios y disponibilidad actualizados...
+</div>
+
 
       <div class="layout">
         <section class="caja">
@@ -115,58 +161,147 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>© 2026 Verdeza Condominio de Campo — Turbaco, Bolívar</p>
-      <p class="footer-dev">
-        Diseñado y Desarrollado por <span>ZavieruDev</span>
+    <footer class="footer">
+
+  <div class="footer-contenido">
+
+    <!-- Identidad -->
+    <div class="footer-columna footer-identidad">
+      <img
+        src="imagenes/logo.png"
+        alt="Verdeza Condominio de Campo"
+        class="footer-logo"
+      />
+
+      <p>
+        Un lugar donde la naturaleza, la tranquilidad
+        y tus sueños encuentran su espacio.
       </p>
-      <a href="https://www.instagram.com/zavierudev" target="_blank" class="footer-insta">
+
+      <span class="footer-ubicacion">
+        Turbaco, Bolívar, Colombia
+      </span>
+    </div>
+
+    <!-- Navegación -->
+    <div class="footer-columna">
+      <h3>Explora Verdeza</h3>
+
+      <nav class="footer-enlaces" aria-label="Navegación del pie de página">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#amenidades">Amenidades</a>
+        <a href="lotes.html">Explorar lotes</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <!-- Contacto -->
+    <div class="footer-columna">
+      <h3>Hablemos</h3>
+
+      <div class="footer-contacto">
+        <a href="tel:+573006275231">300 627 5231</a>
+        <a href="tel:+573218665485">321 866 5485</a>
+
+        <a href="mailto:gerenciaventaspromotoraverdeza@gmail.com">
+          gerenciaventaspromotoraverdeza@gmail.com
+        </a>
+      </div>
+
+      <div class="footer-redes">
+        <a
+          href="https://www.youtube.com/@promotoraverdeza"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube de Verdeza"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/18cGsC66NM/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook de Verdeza"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@promotora.verdeza"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok de Verdeza"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Franja inferior -->
+  <div class="footer-inferior">
+
+    <p>
+      © 2026 Verdeza Condominio de Campo —
+      Turbaco, Bolívar
+    </p>
+
+    <div class="footer-desarrollador">
+      <p class="footer-dev">
+        Diseñado y desarrollado por <span>ZavieruDev</span>
+      </p>
+
+      <a
+        href="https://www.instagram.com/zavierudev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-insta"
+        aria-label="Instagram de ZavieruDev"
+      >
         <i class="fa-brands fa-instagram"></i>
       </a>
     </div>
 
-    <!-- BOTÓN WHATSAPP -->
-    <a
-      href="https://wa.me/573218665485?text=Hola,%20quiero%20mas%20informacion%20sobre%20los%20lotes."
-      target="_blank"
-      class="whatsapp-boton"
-    >
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    </a>
+  </div>
 
-    <script src="lista-precios.js"></script>
-    <script src="lotes-data.js"></script>
-    <script>
+</footer>
 
-/* ==========================================================
-   CONFIGURACIÓN
-   Los datos de cada lote (área, estado, tipo y valor) salen de lista-precios.js
-   (LISTA DE PRECIOS 2026). lotes-data.js solo trae el contorno y el número.
-   ========================================================== */
-const PRECIO_M2 = { comercial:268400, lote:186180, esquinero:196880, luxury:207580 };
+    
+<!-- Biblioteca oficial de Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+<!-- Conexión con la base de datos -->
+<script src="supabase-config.js"></script>
+
+
+
+<script>
+
+
+const PLANO = {w:3600,h:2246};
+const LOTES = [];
 const TIPO_NOMBRE = { comercial:'Local comercial (L.C.)', lote:'Lote', esquinero:'Lote esquinero', luxury:'Lote luxury' };
 const ESTADOS = {
   disponible:{ nombre:'Disponible', color:'#3fae49' },
   vendido   :{ nombre:'Vendido',    color:'#7a817a' },
   bloqueado :{ nombre:'Bloqueado',  color:'#c0504d' },
+  separado: {nombre: 'Separado',color: '#e6aa27' },
   sinasignar:{ nombre:'Sin asignar', color:'#6f8fb5' }
 };
 const SEPARACION = 1000000;
-const WHATSAPP = '573218665485';
-const EDITAR = new URLSearchParams(location.search).has('editar');
-const LS_KEY = 'verdeza_lotes_nums_v2';
+let datosSupabaseListos = false;
 
-/* Números asignados en el modo edición (solo en este navegador) */
-let cambios = {};
-try { cambios = JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch(e) {}
-LOTES.forEach(l => { if (cambios[l.id] !== undefined) l.num = cambios[l.id]; aplicarLista(l); });
-
-function aplicarLista(l) {
-  const d = l.num && LISTA[l.num];
-  if (d) { l.area = d.area; l.tipo = d.tipo; l.estado = d.estado; l.valor = d.valor; }
-  else   { l.area = l.tipo = l.valor = null; l.estado = 'sinasignar'; }
+function mostrarEstadoConexion(mensaje, visible = true) {
+  const aviso = document.getElementById('estadoConexion');
+  aviso.textContent = mensaje;
+  aviso.hidden = !visible;
+  aviso.style.display = visible ? 'block' : 'none';
 }
+
+const WHATSAPP = '573218665485';
 
 /* ================= PLANO: imagen + polígonos ================= */
 const NS = 'http://www.w3.org/2000/svg';
@@ -183,6 +318,7 @@ let seleccionado = null;
 const filtros = new Set(Object.keys(ESTADOS));
 const centro = p => [p.reduce((s,q)=>s+q[0],0)/p.length, p.reduce((s,q)=>s+q[1],0)/p.length];
 
+function dibujarLotes() {
 LOTES.forEach(l => {
   const pol = mk('polygon', { points:l.poly.map(p=>p.join(',')).join(' '), class:'lote' });
   pol.addEventListener('click', () => { if(!movido) seleccionar(l.id); });
@@ -191,10 +327,11 @@ LOTES.forEach(l => {
   const t = mk('text', { x:cx, y:cy, class:'etq' }); gEtq.appendChild(t); l.txt = t;
   pintar(l);
 });
+}
 
 function pintar(l) {
   l.el.setAttribute('fill', ESTADOS[l.estado].color);
-  l.el.classList.toggle('sinnum', EDITAR && !l.num);
+
   l.txt.textContent = l.num || '';
 }
 
@@ -258,10 +395,50 @@ svg.addEventListener('pointerup', soltar); svg.addEventListener('pointercancel',
 window.addEventListener('resize', vista);
 ajustar();
 
+/* Fuente única: vista pública de Supabase */
+async function cargarLotesSupabase() {
+  try {
+    const {data,error} = await verdezaDB.from('lotes_publicos')
+      .select('mapa_id,numero,estado,tipo,area_m2,precio_cop,poligono')
+      .eq('proyecto','verdeza').order('mapa_id').limit(500);
+    if(error) throw error;
+    if(!Array.isArray(data) || data.length !== 291) throw new Error('Inventario incompleto');
+    const ids = new Set(), nums = new Set();
+    const registros = data.map(d => {
+      const id = Number(d.mapa_id), num = d.numero === null ? null : Number(d.numero);
+      const poly = d.poligono;
+      if(!Number.isSafeInteger(id) || id <= 0 || ids.has(id) || !Array.isArray(poly) || poly.length < 3 || !poly.every(p => Array.isArray(p) && p.length === 2 && p.every(Number.isFinite))) throw new Error('Polígono o identificador inválido');
+      ids.add(id);
+      if(num === null) {
+        if(d.estado !== 'sin_asignar') throw new Error('Elemento sin numerar inválido');
+        return {id,num,poly,estado:'sinasignar',area:null,tipo:null,valor:null};
+      }
+      const area = Number(d.area_m2), valor = Number(d.precio_cop);
+      if(!Number.isInteger(num) || num < 1 || num > 290 || nums.has(num) || !Number.isFinite(area) || area <= 0 || !Number.isSafeInteger(valor) || valor <= 0 || !['disponible','vendido','bloqueado','separado'].includes(d.estado) || !Object.hasOwn(TIPO_NOMBRE,d.tipo)) throw new Error('Datos comerciales inválidos');
+      nums.add(num);
+      return {id,num,poly,area,valor,tipo:d.tipo,estado:d.estado};
+    });
+    if(nums.size !== 290) throw new Error('Numeración incompleta');
+    LOTES.push(...registros);
+    dibujarLotes();
+    LOTES.forEach(l => l.el.classList.toggle('oculto', !filtros.has(l.estado)));
+    vista();
+    datosSupabaseListos = true;
+    mostrarEstadoConexion('',false);
+  } catch(error) {
+    console.error('No se pudo cargar el plano:',error);
+    datosSupabaseListos = false;
+    LOTES.length = 0;
+    gLotes.replaceChildren(); gEtq.replaceChildren();
+    mostrarEstadoConexion('No se pudo actualizar la información. Intenta nuevamente.');
+    panel.innerHTML = `<h2>Información temporalmente no disponible</h2><p class="plan">No pudimos consultar el plano actualizado.</p><button class="btn btn-primario" onclick="location.reload()">Reintentar</button>`;
+  }
+}
+
 /* ================= LEYENDA / FILTROS ================= */
 const leyenda = document.getElementById('leyenda');
 Object.entries(ESTADOS).forEach(([k,e]) => {
-  if (k === 'sinasignar' && !EDITAR) return;
+  if (k === 'sinasignar') return;
   const b = document.createElement('button');
   b.innerHTML = `<span class="dot" style="background:${e.color}"></span>${e.nombre}`;
   b.onclick = () => {
@@ -276,10 +453,15 @@ Object.entries(ESTADOS).forEach(([k,e]) => {
 const cop = v => '$' + Math.round(v).toLocaleString('es-CO');
 
 function seleccionar(id) {
+
+  if (!datosSupabaseListos) {
+    return;
+  }
+
   const l = LOTES.find(x => x.id === id);
   if (seleccionado) seleccionado.el.classList.remove('sel');
   seleccionado = l; l.el.classList.add('sel');
-  EDITAR ? panelEdicion(l) : panelInfo(l);
+  panelInfo(l);
   if (innerWidth <= 950) panel.scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
@@ -294,97 +476,59 @@ function panelInfo(l) {
   const v = l.valor, total20 = Math.round(v * 0.2);
   const inicial = total20 - SEPARACION, saldo = v - total20;
   const msg = encodeURIComponent(`Hola, me interesa el lote ${l.num} de Verdeza.`);
+
+const disponible = l.estado === 'disponible';
+
+const planPagoHTML = disponible
+  ? `<div class="plan">
+      <b>Plan de pago</b><br>
+      • Separación: ${cop(SEPARACION)}<br>
+      • Cuota inicial 20% (${cop(total20)}, menos la separación):
+        ${cop(inicial)} en 4 cuotas de ${cop(Math.round(inicial / 4))}<br>
+      • Saldo: ${cop(saldo)} en 48 cuotas de
+        ${cop(Math.round(saldo / 48))}
+    </div>`
+  : `<div class="plan">
+      <b>Lote no disponible para nueva separación.</b><br>
+      Estado actual: ${est.nombre}.
+    </div>`;
+
+
+const whatsappHTML = disponible
+  ? `<a
+      class="btn btn-wa"
+      href="https://wa.me/${WHATSAPP}?text=${msg}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Consultar disponibilidad por WhatsApp
+    </a>`
+  : `<div class="aviso-no-disponible">
+      Este lote no está disponible para una nueva separación.
+    </div>`;
+
+
   panel.innerHTML = `
     <h2>Lote ${l.num}<span class="badge" style="background:${est.color}">${est.nombre}</span></h2>
     <div class="tipo">${TIPO_NOMBRE[l.tipo]}</div>
     <div class="fila"><span>Área</span><b>${l.area.toLocaleString('es-CO',{minimumFractionDigits:2})} m²</b></div>
-    <div class="fila"><span>Valor por m²</span><b>${cop(PRECIO_M2[l.tipo])}</b></div>
+    <div class="fila"><span>Valor por m²</span><b>${cop(l.valor / l.area)}</b></div>
     <div class="total"><div style="font-size:.8rem;color:#5b6a5d">Valor del lote</div><div class="grande">${cop(v)}</div></div>
-    <div class="plan"><b>Plan de pago</b><br>
-      • Separación: ${cop(SEPARACION)}<br>
-      • Cuota inicial 20% (${cop(total20)}, menos la separación): ${cop(inicial)} en 4 cuotas de ${cop(Math.round(inicial/4))}<br>
-      • Saldo: ${cop(saldo)} en 48 cuotas de ${cop(Math.round(saldo/48))}</div>
+    ${planPagoHTML}
     <div class="acciones">
-      <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${msg}">Consultar por WhatsApp</a>
+      
+${whatsappHTML}
+
     </div>
     <p class="aviso">Lista de precios 2026. Sujeto a disponibilidad.</p>`;
 }
-
-/* ================= MODO EDICIÓN (?editar=1) ================= */
-const area2 = p => { let s=0; for (let i=0;i<p.length;i++){ const [x1,y1]=p[i],[x2,y2]=p[(i+1)%p.length]; s+=x1*y2-x2*y1; } return Math.abs(s)/2; };
-function usados(excluirId) { return new Set(LOTES.filter(x => x.num && x.id !== excluirId).map(x => x.num)); }
-
-function panelEdicion(l) {
-  const est = area2(l.poly) * M2_POR_U2, usado = usados(l.id);
-  const cand = Object.keys(LISTA).map(Number).filter(n => !usado.has(n) && Math.abs(LISTA[n].area - est) / est < 0.12)
-    .sort((a,b) => Math.abs(LISTA[a].area-est) - Math.abs(LISTA[b].area-est)).slice(0, 10);
-  panel.innerHTML = `<div class="edit">
-    <h2>Asignar número</h2>
-    <p class="tipo">Área aproximada del contorno: ≈ ${Math.round(est)} m²</p>
-    <label>Número de lote (el que aparece en el plano)</label>
-    <input id="eNum" type="number" min="1" max="290" value="${l.num ?? ''}">
-    <div id="ePrev" class="plan" style="margin-top:8px"></div>
-    <label>Sugeridos por área (aún sin usar)</label>
-    <div style="display:flex;flex-wrap:wrap;gap:6px">${cand.map(n => `<button class="btn btn-gris" style="padding:4px 10px;font-size:.8rem" data-n="${n}">${n} · ${LISTA[n].area}</button>`).join('') || '<span class="aviso">Sin sugerencias</span>'}</div>
-    <div class="acciones" style="margin-top:14px">
-      <button class="btn btn-primario" id="eOk">Guardar y pasar al siguiente</button>
-      <button class="btn btn-gris" id="eQuitar">Quitar número</button>
-    </div></div>`;
-  const inp = document.getElementById('eNum'), prev = document.getElementById('ePrev');
-  const mostrar = () => {
-    const n = +inp.value, d = LISTA[n];
-    if (!inp.value) prev.textContent = '';
-    else if (!d) prev.textContent = 'Ese número no existe en la lista (1 a 290).';
-    else if (usados(l.id).has(n)) prev.textContent = `⚠ El lote ${n} ya está asignado a otro contorno.`;
-    else prev.textContent = `${TIPO_NOMBRE[d.tipo]} · ${d.area} m² · ${ESTADOS[d.estado].nombre}`;
-  };
-  inp.oninput = mostrar; mostrar(); inp.focus();
-  panel.querySelectorAll('[data-n]').forEach(b => b.onclick = () => { inp.value = b.dataset.n; mostrar(); });
-  document.getElementById('eOk').onclick = () => {
-    const n = +inp.value;
-    if (!LISTA[n]) return alert('Escribe un número entre 1 y 290.');
-    if (usados(l.id).has(n) && !confirm(`El lote ${n} ya está asignado a otro contorno. ¿Continuar igual?`)) return;
-    guardar(l, n); siguiente(l);
-  };
-  document.getElementById('eQuitar').onclick = () => { guardar(l, null); panelEdicion(l); };
-}
-function guardar(l, n) {
-  l.num = n; cambios[l.id] = n; aplicarLista(l);
-  localStorage.setItem(LS_KEY, JSON.stringify(cambios));
-  pintar(l); actualizarBarra();
-}
-function irA(l) {
-  const [cx, cy] = centro(l.poly), r = svg.getBoundingClientRect();
-  vw = 700; const vh = vw * r.height / r.width; vx = cx - vw/2; vy = cy - vh/2; vista();
-}
-function siguiente(desde) {
-  const sin = LOTES.filter(x => !x.num);
-  if (!sin.length) { alert('¡Todos los lotes tienen número! Descarga lotes-data.js.'); return; }
-  const [cx, cy] = centro(desde.poly);
-  const prox = sin.sort((a,b) => { const [ax,ay]=centro(a.poly),[bx,by]=centro(b.poly); return Math.hypot(ax-cx,ay-cy) - Math.hypot(bx-cx,by-cy); })[0];
-  seleccionar(prox.id); irA(prox);
-}
-function actualizarBarra() {
-  const sin = LOTES.filter(l => !l.num).length;
-  document.getElementById('barraEdit').innerHTML =
-    `<b>Modo edición</b> · ${LOTES.length} contornos · ${LOTES.length - sin} con número · ${sin} sin número (borde naranja)
-     <button class="btn btn-primario" id="bDesc">Descargar lotes-data.js</button>
-     <button class="btn btn-gris" id="bBorrar">Borrar cambios locales</button>`;
-  document.getElementById('bDesc').onclick = () => {
-    const datos = LOTES.map(({ id, num, poly }) => ({ id, num, poly }));
-    const js = `// Contornos de lotes (plano comercial PL-1/1) y número de lote.\nconst PLANO=${JSON.stringify(PLANO)};\nconst M2_POR_U2=${M2_POR_U2};\nconst LOTES=${JSON.stringify(datos)};\n`;
-    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([js], { type:'text/javascript' }));
-    a.download = 'lotes-data.js'; a.click();
-  };
-  document.getElementById('bBorrar').onclick = () => { if (confirm('¿Borrar los números guardados en este navegador?')) { localStorage.removeItem(LS_KEY); location.reload(); } };
-}
-if (EDITAR) { document.getElementById('barraEdit').hidden = false; actualizarBarra(); }
 
 /* ================= MENÚ HAMBURGUESA (igual que index.html) ================= */
 const navbarHamburguesa = document.getElementById('navbarHamburguesa');
 const navbarEnlaces = document.getElementById('navbarEnlaces');
 navbarHamburguesa.addEventListener('click', () => navbarEnlaces.classList.toggle('activo'));
 document.querySelectorAll('.navbar-enlaces a').forEach(a => a.addEventListener('click', () => navbarEnlaces.classList.remove('activo')));
+    cargarLotesSupabase();
     </script>
   </body>
 </html>
