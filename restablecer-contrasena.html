@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Restablecer contraseña | Verdeza</title><style>
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#f5f8f5;color:#20352b;font:15px/1.6 system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px 14px}main{width:100%;max-width:460px;background:white;border:1px solid #e3eae4;border-radius:18px;overflow:hidden;box-shadow:0 12px 35px #193e2a15}header{background:#173d30;color:white;text-align:center;padding:24px}header img{width:180px;max-height:100px;object-fit:contain}header strong{display:block;font-size:20px}section{padding:28px}h1{font-size:25px;line-height:1.25;margin:0 0 12px;color:#173d30}p{margin:0 0 16px}label{display:block;font-weight:700;margin:16px 0 6px}.field{display:flex;gap:6px}input{min-width:0;width:100%;padding:12px;border:1px solid #abbcaf;border-radius:9px;font:inherit}button{font:inherit;font-weight:700;cursor:pointer;border:0;border-radius:9px;padding:12px;background:#24734e;color:white}button:disabled{opacity:.55;cursor:not-allowed}.toggle{background:#edf4ef;color:#173d30;font-size:13px}#guardar{width:100%;margin-top:20px}a{color:#24734e}small{color:#697b70;display:block;margin-top:8px}#estado{overflow-wrap:anywhere}#error{color:#a52d2d;margin-top:12px}footer{text-align:center;padding:0 28px 24px} :focus-visible{outline:3px solid #659d7c;outline-offset:3px}
+</style></head><body><main><header><img src="imagenes/logo.png" alt="" ><strong>Verdeza · Condominio de Campo</strong></header><section><h1>Restablece tu contraseña</h1><p id="estado" role="status" aria-live="polite">Verificando el enlace de recuperación…</p><form id="form" hidden><label for="clave">Nueva contraseña</label><div class="field"><input id="clave" type="password" autocomplete="new-password" required minlength="12"><button class="toggle" type="button" data-target="clave">Mostrar</button></div><small>Mínimo 12 caracteres, máximo 72 bytes. Usa una contraseña única.</small><label for="confirmar">Confirma tu contraseña</label><div class="field"><input id="confirmar" type="password" autocomplete="new-password" required minlength="12"><button class="toggle" type="button" data-target="confirmar">Mostrar</button></div><button id="guardar" type="submit">Guardar nueva contraseña</button><p id="error" role="alert"></p></form></section><footer><a id="volver" href="index.html">Volver a la página principal</a></footer></main>
+<script>const fragment=new URLSearchParams(location.hash.slice(1));
+const query=new URLSearchParams(location.search);
+const recovery=fragment.get('type')==='recovery' && !!fragment.get('access_token') && !!fragment.get('refresh_token') && !fragment.has('error') && !query.has('error');
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="supabase-config.js"></script><script>
+'use strict';
+const $=id=>document.getElementById(id);
+let verifiedId=null, verifiedToken=null, busy=false, changed=false;
+function fail(){verifiedId=null;verifiedToken=null;$('form').hidden=true;$('estado').textContent='El enlace no es válido, ha vencido o ya fue utilizado. Solicita uno nuevo.';}
+function clean(){history.replaceState(null,'',location.pathname);}
+async function init(){
+ if(typeof verdezaDB==='undefined'){ $('estado').textContent='No se pudo conectar con el sistema de autenticación.';return; }
+ if(!recovery){clean();fail();return;}
+ try{
+ const {data,error}=await verdezaDB.auth.setSession({access_token:fragment.get('access_token'),refresh_token:fragment.get('refresh_token')});
+ clean();if(error||!data.session)throw Error();
+ const {data:auth,error:authError}=await verdezaDB.auth.getUser();
+ if(authError||!auth.user||auth.user.id!==data.session.user.id)throw Error();
+ verifiedId=auth.user.id;verifiedToken=data.session.access_token;
+ $('estado').textContent='Crea una nueva contraseña para tu cuenta.';$('form').hidden=false;
+ }catch{clean();fail();}
+}
+for(const b of document.querySelectorAll('.toggle'))b.addEventListener('click',()=>{const input=$(b.dataset.target);input.type=input.type==='password'?'text':'password';b.textContent=input.type==='password'?'Mostrar':'Ocultar';b.setAttribute('aria-pressed',String(input.type==='text'));});
+$('form').addEventListener('submit',async e=>{e.preventDefault();if(busy||changed||!verifiedId)return;const password=$('clave').value;$('error').textContent='';if(password.trim().length<12||new TextEncoder().encode(password).length>72){$('error').textContent='La contraseña debe cumplir los requisitos indicados.';return;}if(password!==$('confirmar').value){$('error').textContent='Las contraseñas no coinciden.';return;}busy=true;$('guardar').disabled=true;$('guardar').textContent='Guardando…';try{
+ const {data:s,error:se}=await verdezaDB.auth.getSession();if(se||s.session?.access_token!==verifiedToken||s.session?.user.id!==verifiedId){fail();return;}
+ const {data:u,error:ue}=await verdezaDB.auth.getUser();if(ue||u.user?.id!==verifiedId){fail();return;}
+ const {error}=await verdezaDB.auth.updateUser({password});if(error){$('error').textContent='No se pudo actualizar la contraseña. Verifica los requisitos o solicita un nuevo enlace.';return;}
+ changed=true;$('form').reset();$('form').hidden=true;$('estado').textContent='Contraseña actualizada. Cerrando sesión…';
+ const {error:logoutError}=await verdezaDB.auth.signOut({scope:'global'});if(logoutError){$('estado').textContent='Contraseña actualizada, pero no se pudo cerrar la sesión. Cierra sesión antes de volver a ingresar.';return;} $('estado').textContent='Contraseña actualizada correctamente. Tu nueva contraseña ha sido guardada. El portal de acceso estará disponible próximamente.';
+ }catch{$('error').textContent='No se pudo completar la operación. Intenta nuevamente.';}finally{busy=false;$('guardar').disabled=changed;$('guardar').textContent='Guardar nueva contraseña';}});
+init();
+</script></body></html>
